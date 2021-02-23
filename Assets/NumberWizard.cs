@@ -22,12 +22,16 @@ public class NumberWizard : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
             Debug.Log("Higher");
+        }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
             Debug.Log("Lower");
+        }
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        else if (Input.GetKeyDown(KeyCode.Return))
         {
             Debug.Log("Correct");
         }
