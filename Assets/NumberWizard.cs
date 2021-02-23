@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class NumberWizard : MonoBehaviour
 {
+    int max = 1000;
+    int min = 1;
+    int guess = 500;
     // Start is called before the first frame update
     void Start()
     {
-        int max = 1000;
-        int min = 1;
+
 
         Debug.Log("Welcome to Number Wizard.");
         Debug.Log("Pick a Number");
@@ -24,11 +26,15 @@ public class NumberWizard : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             Debug.Log("Higher");
+            min = guess;
+            Debug.Log(guess);
         }
 
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             Debug.Log("Lower");
+            max = guess;
+            Debug.Log(guess);
         }
 
         else if (Input.GetKeyDown(KeyCode.Return))
