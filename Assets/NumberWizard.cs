@@ -18,6 +18,7 @@ public class NumberWizard : MonoBehaviour
         Debug.Log("Lowest number is: " + min);
         Debug.Log("Tell me if your number is higher or lower than 500.");
         Debug.Log("Push Up = Higher, Push Down = Lower, Push Enter = Correct");
+        max = max + 1;
     }
 
     // Update is called once per frame
@@ -27,6 +28,7 @@ public class NumberWizard : MonoBehaviour
         {
             Debug.Log("Higher");
             min = guess;
+            guess = (max + min) / 2;
             Debug.Log(guess);
         }
 
@@ -34,6 +36,7 @@ public class NumberWizard : MonoBehaviour
         {
             Debug.Log("Lower");
             max = guess;
+            guess = (max + min) / 2;
             Debug.Log(guess);
         }
 
