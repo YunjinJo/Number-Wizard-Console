@@ -10,7 +10,13 @@ public class NumberWizard : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        StartGame();
+    }
+    void StartGame()
+    {
+        max = 1000;
+        min = 1;
+        guess = 500;
 
         Debug.Log("Welcome to Number Wizard.");
         Debug.Log("Pick a Number");
@@ -28,7 +34,7 @@ public class NumberWizard : MonoBehaviour
         {
             Debug.Log("Higher");
             min = guess;
-            guess = (max + min) / 2;
+            NextGuess();
             Debug.Log(guess);
         }
 
@@ -36,13 +42,18 @@ public class NumberWizard : MonoBehaviour
         {
             Debug.Log("Lower");
             max = guess;
-            guess = (max + min) / 2;
+            NextGuess();
             Debug.Log(guess);
         }
 
         else if (Input.GetKeyDown(KeyCode.Return))
         {
             Debug.Log("Correct");
+            StartGame();
         }
+    }
+    void NextGuess()
+    {
+        guess = (max + min) / 2;
     }
 }
